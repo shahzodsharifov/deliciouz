@@ -2,10 +2,12 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {Inter} from "@next/font/google"
 import { wrapper } from '../src/store/store'
+import { Provider } from 'react-redux'
 
 const inter = Inter({subsets: ['latin', 'cyrillic']})
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, ...rest }: AppProps) {
+  const {store, props} = wrapper.useWrappedStore(rest)
   return (
     <>
     <style jsx global>{`
@@ -13,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         font-family: ${inter.style.fontFamily}
       }
     `}</style>
-      <Component {...pageProps} />   
+     <Provider store={store}>
+     <Component {...props.pageProps} />   
+     </Provider>
     </>
   )
 }
