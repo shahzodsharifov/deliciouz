@@ -3,7 +3,7 @@ import CloseIc from "../public/img/closeIc.svg"
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Food1 from "../public/img/food1.png"
-import { getFood, getInfo } from "./FoodCard";
+import { GetFood, GetInfo } from "./FoodCard";
 import { useSelector } from "react-redux";
 import { AppState } from "../src/store/store";
 import { useDispatch } from "react-redux";
@@ -41,14 +41,14 @@ import shopItems, { setItems } from "../src/store/shopItems";
 
                  <div className="foodPicContainer">
                     <div className="foodPic">
-                        <Image src={getFood(selectedFood)!.foodThumb} alt="food pic" fill/>
+                        <Image src={GetFood(selectedFood)!.foodThumb} alt="food pic" fill/>
                     </div>
                 </div> 
 
-                <h1 className="foodNameModal">{getFood(selectedFood)?.foodName}</h1> 
-                <p className="foodInfoModal">{getFood(selectedFood)?.foodInfo}</p>  
+                <h1 className="foodNameModal">{GetFood(selectedFood)?.foodName}</h1> 
+                <p className="foodInfoModal">{GetFood(selectedFood)?.foodInfo}</p>  
 
-                <p className="drinking">{getInfo()?.drinks}</p>   
+                <p className="drinking">{GetInfo()?.drinks}</p>   
                 <div className="dChoices">
                 <div className="coke">
                 <input type="checkbox" className="cokeInput"/>
@@ -61,7 +61,7 @@ import shopItems, { setItems } from "../src/store/shopItems";
                 </div>
                 </div>
 
-                <p className="totalPrice">{parseInt(getFood(selectedFood)!.foodPrice) * foodCount} {getFood(selectedFood)!.currency}</p>
+                <p className="totalPrice">{parseInt(GetFood(selectedFood)!.foodPrice) * foodCount} {GetFood(selectedFood)!.currency}</p>
 
                 <div className="modalBtns">
                     <div className="addBtn">
@@ -80,7 +80,7 @@ import shopItems, { setItems } from "../src/store/shopItems";
                            
 
                         }}>
-                    {getInfo()?.addToCart}
+                    {GetInfo()?.addToCart}
                     </button>
                 </div>
 

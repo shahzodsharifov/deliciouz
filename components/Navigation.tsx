@@ -11,7 +11,7 @@ import ShoppingCart from "../public/img/shoppingCart.svg"
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { getInfo } from "./FoodCard";
+import { GetInfo } from "./FoodCard";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../src/store/store";
 
@@ -70,7 +70,7 @@ import { AppState } from "../src/store/store";
                 <div className={drawerOpen ? "navBg" : "navBgClosed"} onClick={()=> console.log("clicked")} />
                 <div className={drawerOpen ? "moreInfoNav" : "moreInfoNavClosed"}>
                     <div className="menuLabel">
-                        <p>{getInfo()?.menu}</p>
+                        <p>{GetInfo()?.menu}</p>
                         <div className="arrow" onClick={()=> {setDrawerOpen(false)}}>
                         <div className="arrowContainer">
                             <Image src={CloseIc} fill alt="close icon"/>
@@ -178,7 +178,7 @@ import { AppState } from "../src/store/store";
                         <ul className="pages">
                           <Link href={"/"}>
                           <li className={!router.pathname.includes("contacts") && !router.pathname.includes("aboutus") ? "activeRoute" : ""}>
-                                <p>{getInfo()?.mainPage}</p> 
+                                <p>{GetInfo()?.mainPage}</p> 
                                 <div className="tickContainer">
                                             <div className="tick">
                                                 <Image src={TickIc} fill alt="close icon"/>
@@ -188,7 +188,7 @@ import { AppState } from "../src/store/store";
                             </Link> 
                            <Link href={"/contacts"}>
                            <li className={router.pathname.includes("contacts") ? "activeRoute" : ""}>
-                            <p>{getInfo()?.contactsPage}</p>
+                            <p>{GetInfo()?.contactsPage}</p>
                             <div className="tickContainer">
                                             <div className="tick">
                                                 <Image src={TickIc} fill alt="close icon"/>
@@ -199,7 +199,7 @@ import { AppState } from "../src/store/store";
                            </Link>
                            <Link href={"/"}>
                            <li className={router.pathname.includes("aboutus") ? "activeRoute" : ""}>
-                            <p>{getInfo()?.aboutUSPage}</p>
+                            <p>{GetInfo()?.aboutUSPage}</p>
                             <div className="tickContainer">
                                             <div className="tick">
                                                 <Image src={TickIc} fill alt="close icon"/>

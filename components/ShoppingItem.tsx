@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CartItemWrap } from "../styles/CartItemWrap"
 import Food1 from "../public/img/food1.png"
-import { getFood } from "./FoodCard";
+import { GetFood } from "./FoodCard";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { AppState } from "../src/store/store";
 import { updateCount,decreaseCount,deleteItem } from "../src/store/shopItems";
@@ -16,19 +16,19 @@ const ShoppingItem = ({nameFood, foodCount, itemIndex}:any) => {
            <div className="cartStuff">
            <div className="cartThumbContainer">
                 <div className="cartThumb">
-                    <Image src={getFood(nameFood)!.foodThumb} fill alt="thumb" />
+                    <Image src={GetFood(nameFood)!.foodThumb} fill alt="thumb" />
                 </div>
             </div>
 
             <div className="cartInfo">
-                <h4 className="itemName">{getFood(nameFood)?.foodName}</h4>
+                <h4 className="itemName">{GetFood(nameFood)?.foodName}</h4>
                 <p>Coca Cola 1.5L</p>
                 <p>Pepsi 1.5L</p>
             </div>
            </div>
 
             <div className="cartActions">
-                <p className="itemPrice">{parseInt(getFood(nameFood)!.foodPrice) * foodCount} {getFood(nameFood)!.currency}</p>
+                <p className="itemPrice">{parseInt(GetFood(nameFood)!.foodPrice) * foodCount} {GetFood(nameFood)!.currency}</p>
 
                 <div className="itemButton">
                     <p onClick={()=> {

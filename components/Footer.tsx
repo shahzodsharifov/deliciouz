@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FooterWrap } from "../styles/FooterWrap";
-import { getInfo } from "./FoodCard";
+import { GetInfo } from "./FoodCard";
 
 const Footer = () => {
     return (
@@ -14,15 +14,15 @@ const Footer = () => {
 
             <div className="footerItems">
             <Link href={"/"}>
-            <p>{getInfo()?.mainPage}</p>
+            <p>{GetInfo()?.mainPage}</p>
            </Link>
 
            <Link href={"/contacts"}>
-            <p>{getInfo()?.contactsPage}</p>
+            <p>{GetInfo()?.contactsPage}</p>
            </Link>
 
            <Link href={"/"}>
-            <p>{getInfo()?.aboutUSPage}</p>
+            <p>{GetInfo()?.aboutUSPage}</p>
            </Link>
             </div>
           </div>

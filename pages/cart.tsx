@@ -5,7 +5,7 @@ import ShoppingItem from "../components/ShoppingItem"
 import shopItems from "../src/store/shopItems"
 import { useDispatch, useSelector } from "react-redux/es/exports"
 import { AppState } from "../src/store/store"
-import { getFood, getInfo } from "../components/FoodCard"
+import { GetFood, GetInfo } from "../components/FoodCard"
 import { useRouter } from "next/router"
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
     const router = useRouter()
     var totalCashMoney = 0;
     items.forEach((e) => {
-        totalCashMoney = totalCashMoney + parseInt(getFood(e.selectedFood)!.foodPrice) * e.foodCount
+        totalCashMoney = totalCashMoney + parseInt(GetFood(e.selectedFood)!.foodPrice) * e.foodCount
     })
    if(items.length<1) {
             return (
@@ -23,8 +23,8 @@ const Cart = () => {
                 <Navigation/>
                 <CartWrapper>
                    <div className="noLeft">
-                   <h4 className="noItem">{getInfo()!.noItem}</h4>
-                    <button className="backtomenu" onClick={() => router.push("/")}>{getInfo()!.menu}</button>
+                   <h4 className="noItem">{GetInfo()!.noItem}</h4>
+                    <button className="backtomenu" onClick={() => router.push("/")}>{GetInfo()!.menu}</button>
                    </div>
                 </CartWrapper>
                 <Footer/>
@@ -40,30 +40,30 @@ const Cart = () => {
        </div>
 
        <div className="totalCash">
-        <h3>{getInfo()!.order}</h3>
+        <h3>{GetInfo()!.order}</h3>
         <div>
             {items.map((e, index) => 
                 <div key={index} className="itemInfos">
-                <p>{getFood(e.selectedFood)!.foodName}</p>
-                <p>{parseInt(getFood(e.selectedFood)!.foodPrice) * e.foodCount} {getFood(e.selectedFood)!.currency} </p>
+                <p>{GetFood(e.selectedFood)!.foodName}</p>
+                <p>{parseInt(GetFood(e.selectedFood)!.foodPrice) * e.foodCount} {GetFood(e.selectedFood)!.currency} </p>
                 </div>
             )}
            
         </div>
        <div className="delivery">
-        <p>  {getInfo()!.delivery}</p>
-        <p>0 {getInfo()!.currency}</p>
+        <p>  {GetInfo()!.delivery}</p>
+        <p>0 {GetInfo()!.currency}</p>
        </div>
 
        <div className="totalMoney">
-        <p>  {getInfo()!.total}</p>
-        <p>{totalCashMoney} {getInfo()!.currency}</p>
+        <p>  {GetInfo()!.total}</p>
+        <p>{totalCashMoney} {GetInfo()!.currency}</p>
 
      
        </div>
 
        <button className="buyTheFood">
-         {getInfo()!.makePayment}
+         {GetInfo()!.makePayment}
         </button>
        </div>
         </CartWrapper>

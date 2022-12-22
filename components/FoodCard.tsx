@@ -14,7 +14,7 @@ interface FoodCardProps {
     
 }
 
-export function getInfo() {
+export function GetInfo() {
     if(useRouter().locale == "uz") {
         return ButtonsUz
     } else if(useRouter().locale == "ru") {
@@ -24,7 +24,7 @@ export function getInfo() {
     }
 }
 
-export function getFood(f:string) {
+export function GetFood(f:string) {
     if(f == "Hamburger" && useRouter().locale == "uz") {
         return Hamburger;
     } else if(f == "Hamburger" && useRouter().locale == "en") {
@@ -49,15 +49,15 @@ const FoodCard = ({foodName} :FoodCardProps) => {
         <FoodCardWrapper>
             <div className="fImgContainer">
                 <div className="fImg">
-                    <Image src={getFood(foodName)!.foodThumb} alt="fastfood" fill/>
+                    <Image src={GetFood(foodName)!.foodThumb} alt="fastfood" fill/>
                 </div>
             </div>
-            <h4 className="fName">{getFood(foodName)!.foodName}</h4>
-            <p className="fInfo">{getFood(foodName)!.foodInfo}</p>
+            <h4 className="fName">{GetFood(foodName)!.foodName}</h4>
+            <p className="fInfo">{GetFood(foodName)!.foodInfo}</p>
 
-            <p className="fPrice">{getFood(foodName)!.foodPrice} {getFood(foodName)!.currency}</p>
+            <p className="fPrice">{GetFood(foodName)!.foodPrice} {GetFood(foodName)!.currency}</p>
 
-            <button className="buyBtn">{getInfo()?.addToCart}</button>
+            <button className="buyBtn">{GetInfo()?.addToCart}</button>
         </FoodCardWrapper>
     )
 }
