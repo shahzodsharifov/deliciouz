@@ -43,7 +43,7 @@ const Cart = () => {
         <h3>{getInfo()!.order}</h3>
         <div>
             {items.map((e, index) => 
-                <div className="itemInfos">
+                <div key={index} className="itemInfos">
                 <p>{getFood(e.selectedFood)!.foodName}</p>
                 <p>{parseInt(getFood(e.selectedFood)!.foodPrice) * e.foodCount} {getFood(e.selectedFood)!.currency} </p>
                 </div>

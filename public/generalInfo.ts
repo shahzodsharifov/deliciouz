@@ -40,7 +40,9 @@ export const ButtonsUz = {
     order: "Buyurtmangiz",
     delivery: "Yetkazib berish",
     total: "Umumiy",
-    makePayment: "To'lov qilish"
+    makePayment: "To'lov qilish",
+    call1: "Yagona aloqa markazi:",
+    call2: "yo'zishingiz ham mumkin",
 }
 
 export const ButtonsRu = {
@@ -55,7 +57,9 @@ export const ButtonsRu = {
     order: "Ваш заказ",
     delivery: "Доставка",
     total: "Итог",
-    makePayment: "Оплатить"
+    makePayment: "Оплатить",
+    call1: "Единый контакт-центр:",
+    call2: "это электронная почта Deliciouz"
 
 }
 
@@ -71,5 +75,7 @@ export const ButtonsEn = {
     order: "Your order",
     delivery: "Delivery",
     total: "Total",
-    makePayment: "Pay"
+    makePayment: "Pay",
+    call1: "A single contact center",
+    call2: "is an email of Deliciouz"
 }
