@@ -130,7 +130,7 @@ import { AppState } from "../src/store/store";
                                             </div>
                                             </div>
 
-                                            <p>O'zbekcha</p>
+                                            <p>O&apos;zbekcha</p>
                                             </div>
 
                                             <div className="tickContainer">
