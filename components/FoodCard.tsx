@@ -15,28 +15,30 @@ interface FoodCardProps {
 }
 
 export function GetInfo() {
-    if(useRouter().locale == "uz") {
+    var theLocale = useRouter().locale!.toString()
+    if(theLocale == "uz") {
         return ButtonsUz
-    } else if(useRouter().locale == "ru") {
+    } else if(theLocale == "ru") {
         return ButtonsRu
-    } else if (useRouter().locale == "en") {
+    } else if (theLocale == "en") {
         return ButtonsEn
     }
 }
 
 export function GetFood(f:string) {
-    if(f == "Hamburger" && useRouter().locale == "uz") {
+    var theLocale = useRouter().locale!.toString()
+    if(f == "Hamburger" && theLocale == "uz") {
         return Hamburger;
-    } else if(f == "Hamburger" && useRouter().locale == "en") {
+    } else if(f == "Hamburger" &&theLocale == "en") {
         return HamburgerEn;
-    } else if (f == "Hamburger" && useRouter().locale == "ru") {
+    } else if (f == "Hamburger" && theLocale == "ru") {
         return HamburgerRu;
     }
-    else if (f == "Mix" && useRouter().locale == "uz") {
+    else if (f == "Mix" && theLocale == "uz") {
         return Mix;
-    } else if (f == "Mix" && useRouter().locale == "ru") {
+    } else if (f == "Mix" &&theLocale == "ru") {
         return MixRu;
-    } else if (f == "Mix" && useRouter().locale == "en") {
+    } else if (f == "Mix" && theLocale == "en") {
         return MixEn;
     }
 }
