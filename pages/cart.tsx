@@ -2,21 +2,23 @@ import { CartWrapper } from "../styles/CartWrapper"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import ShoppingItem from "../components/ShoppingItem"
-import { useDispatch, useSelector } from "react-redux/es/exports"
+import { useDispatch, useSelector } from "react-redux"
 import { AppState } from "../src/store/store"
 import { GetFood, GetInfo } from "../components/FoodCard"
 import { useRouter } from "next/router"
 
 const Cart = () => {
 
-    const items = useSelector((state: AppState) => state.shopItems.items)
-    const dispatch = useDispatch();
+    const items = useSelector((state: AppState) => state?.shopItems?.items)
+ 
     const router = useRouter()
     var totalCashMoney = 0;
     items.forEach((e) => {
         totalCashMoney = totalCashMoney + parseInt(GetFood(e.selectedFood)!.foodPrice) * e.foodCount
     })
-   if(items.length<1) {
+
+    console.log(items)
+   if(items.length<1 && items == null) {
             return (
                 <>
                 <Navigation/>

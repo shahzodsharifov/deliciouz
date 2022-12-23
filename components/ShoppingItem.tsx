@@ -2,13 +2,13 @@ import Image from "next/image";
 import { CartItemWrap } from "../styles/CartItemWrap"
 import Food1 from "../public/img/food1.png"
 import { GetFood } from "./FoodCard";
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../src/store/store";
 import { updateCount,decreaseCount,deleteItem } from "../src/store/shopItems";
 
 const ShoppingItem = ({nameFood, foodCount, itemIndex}:any) => {
 
-    const items = useSelector((state: AppState) => state.shopItems.items)
+    const items = useSelector((state: AppState) => state?.shopItems?.items)
     const dispatch = useDispatch();
 
     return (
