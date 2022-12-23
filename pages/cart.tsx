@@ -18,7 +18,7 @@ const Cart = () => {
     })
 
     console.log(items)
-   if(items.length<1 && items == null) {
+   if(items.length<1 || items == null) {
             return (
                 <>
                 <Navigation/>
